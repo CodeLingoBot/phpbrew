@@ -36,10 +36,7 @@ class PlatformInfo
         return $this->platform->isCentOS();
     }
 
-    private function __construct(Platform $platform)
-    {
-        $this->platform = $platform;
-    }
+    
 
     protected static function createPlatform($kernelName)
     {

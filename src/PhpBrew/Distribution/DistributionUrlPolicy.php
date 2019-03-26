@@ -32,22 +32,5 @@ class DistributionUrlPolicy
         return 'https://secure.php.net/get/'.$filename.'/from/this/mirror';
     }
 
-    private function isDistributedAtMuseum($version)
-    {
-        $version = new Version($version);
-
-        if ($version->getMajorVersion() > 5) {
-            return false;
-        }
-
-        if ($version->getMinorVersion() > 4) {
-            return false;
-        }
-
-        if ($version->getMinorVersion() === 4) {
-            return $version->getPatchVersion() <= 21;
-        }
-
-        return true;
-    }
+    
 }

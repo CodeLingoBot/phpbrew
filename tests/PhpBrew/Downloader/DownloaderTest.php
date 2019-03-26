@@ -60,15 +60,5 @@ class DownloaderTest extends \PHPUnit\Framework\TestCase
         $this->_test('PhpBrew\Downloader\PhpStreamDownloader');
     }
 
-    private function _test($downloader)
-    {
-        $instance = DownloadFactory::getInstance($this->logger, new OptionResult, $downloader);
-        if ($instance->hasSupport(false)) {
-            $actualFilePath = tempnam(Config::getTempFileDir(), '');
-            $instance->download('http://httpbin.org/', $actualFilePath);
-            $this->assertFileExists($actualFilePath);
-        } else {
-            $this->markTestSkipped();
-        }
-    }
+    
 }

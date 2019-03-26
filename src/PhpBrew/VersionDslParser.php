@@ -67,12 +67,5 @@ class VersionDslParser
      *
      * @return string
      */
-    private function buildGitHubUrl($owner, $ref)
-    {
-        return sprintf(
-            'https://github.com/%s/php-src/archive/%s.tar.gz',
-            rawurlencode($owner),
-            rawurlencode($ref)
-        );
-    }
+    
 }

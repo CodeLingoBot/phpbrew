@@ -901,22 +901,7 @@ class VariantBuilder
         );
     }
 
-    private function getConflict(Build $build, $feature)
-    {
-        if (isset($this->conflicts[ $feature ])) {
-            $conflicts = array();
-
-            foreach ($this->conflicts[ $feature ] as $f) {
-                if ($build->isEnabledVariant($f)) {
-                    $conflicts[] = $f;
-                }
-            }
-
-            return $conflicts;
-        }
-
-        return false;
-    }
+    
 
     public function checkConflicts(Build $build)
     {
